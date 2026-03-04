@@ -1,32 +1,54 @@
-const image1 = document.querySelector('forestlake.avif')
-const image2 = document.querySelector('.image2')
-const topTitle = document.querySelector('.top-title')
+// Navbar mobile toggle
+document.querySelector('.navbar-toggle').addEventListener('click', function() {
+  this.classList.toggle('open');
+  document.querySelector('.navbar-links').classList.toggle('open');
+});
 
-const mutate = (pct) => {
-  image2.style.setProperty('--moveY', (1 - pct) * 5);
-  image2.style.setProperty('--scale', 1.25 - pct / 4);
-  image2.style.setProperty('--opacity', pct);
-  topTitle.style.setProperty('--moveY', `${(1 - pct) * (1 - pct) * 80}vh`);
-  topTitle.style.setProperty('--scale', `${(pct / 2 + .5)}`);
-};
+// Hero parallax scroll
+const hero = document.querySelector('.hero');
 
-let last_known_scroll_position = 0;
-let ticking = false;
-
-function doSomething(scroll_pos) {
-  // Do something with the scroll position
-  mutate(1 - scroll_pos / window.innerHeight);
+if (hero) {
+  window.addEventListener('scroll', () => {
+    const scrolled = window.scrollY;
+    const scale = Math.max(0.92, 1 - scrolled * 0.0001);
+    hero.style.transform = `scale(${scale})`;
+  });
 }
 
-window.addEventListener('scroll', function(e) {
-  last_known_scroll_position = window.scrollY;
+// Carousel
+const carousel = document.querySelector('.carousel');
 
-  if (!ticking) {
-    window.requestAnimationFrame(function() {
-      doSomething(last_known_scroll_position);
-      ticking = false;
+if (carousel) {
+  const track = carousel.querySelector('.carousel-track');
+  const slides = track.querySelectorAll('.carousel-slide');
+  const dots = carousel.querySelectorAll('.carousel-dot');
+  const prevBtn = carousel.querySelector('.carousel-prev');
+  const nextBtn = carousel.querySelector('.carousel-next');
+  let current = 0;
+  let autoTimer;
+
+  function goTo(index) {
+    current = (index + slides.length) % slides.length;
+    track.style.transform = 'translateX(-' + (current * 100) + '%)';
+    dots.forEach(function(d, i) {
+      d.classList.toggle('active', i === current);
     });
-
-    ticking = true;
   }
-});
+
+  function startAuto() {
+    autoTimer = setInterval(function() { goTo(current + 1); }, 4000);
+  }
+
+  function resetAuto() {
+    clearInterval(autoTimer);
+    startAuto();
+  }
+
+  prevBtn.addEventListener('click', function() { goTo(current - 1); resetAuto(); });
+  nextBtn.addEventListener('click', function() { goTo(current + 1); resetAuto(); });
+  dots.forEach(function(dot, i) {
+    dot.addEventListener('click', function() { goTo(i); resetAuto(); });
+  });
+
+  startAuto();
+}

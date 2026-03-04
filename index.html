@@ -10,39 +10,92 @@
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet"
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&display=swap" rel="stylesheet">
+        <script src="script.js" defer></script>
     </head>
 
     <body>
         <nav class="navbar">
+            <button class="navbar-toggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
             <ul class="navbar-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="about.html">About Us</a></li>
-                <li><a href="references.html">References</a></li>
+                <li><a href="volunteer.html">Volunteer</a></li>
                 <li><a href="contact.html">Contact</a></li>
                 <li><a href="faq.html">FAQ</a></li>
-                <li><a href="volunteer.html">Volunteer</a></li>
-                <div class="dropdown" style="float: right;">
-                    <button class="dropbtn">Sign In
-                        <i class="fa fa-caret-down"></i>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="">Log-in</a>
-                        <a href="register.html">Register</a>
-                    </div>
+                <li><a href="references.html">References</a></li>
+                <li><a href="register.html">Sign In</a></li>
             </ul>
         </nav>
-        <section class="hero">
-            <div class="hero-content">
-                <h1>Connecting Morris County to Trusted Community Resources</h1>
-                <p>
-                    Discover local programs, nonprofits, events, and services
-                    that support your health, education, and well-being.
-                </p>
-                <a href="#search" class="btn">Start Exploring</a>
-            </div>
-        </section>
+        <div class="overscroll-wrap">
+
+            <section class="hero">
+                <div class="hero-content">
+                    <h1>MCConnect</h1>
+                    <p>
+                        Discover local programs, nonprofits, events, and services
+                        that support your health, education, and well-being.
+                    </p>
+                    <a href="#search" class="btn">Start Exploring</a>
+                    <div class="arrowandtext">
+                        <p class="arrowtext">Learn More</p>
+                        <a href = "#mission" class= "scroll-arrow">&#8595;</a>
+                    </div>
+                </div>
+                
+            </section>
+
+            <section id ="mission" class="mission-section">
+                <div class="mission-content">
+
+                    <!-- LEFT SIDE (Text) -->
+                    <div class="mission-text">
+                        <h2>Our Mission</h2>
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula metus at nisi
+                            fermentum,
+                            vitae scelerisque lectus imperdiet. Cras nec quam ac odio aliquam blandit. Maecenas sit amet
+                            semper lorem.
+                            Sed dignissim, leo nec ultrices volutpat, lorem justo imperdiet eros, at malesuada est felis
+                            ut
+                            libero.
+                            Fusce in sagittis tortor, sed vehicula enim. Vivamus sit amet velit id nulla ultricies
+                            dictum.
+                        <div class="mcblurb-stats">
+                            <div class="stat">
+                                <span class="number" data-target="50">33+</span>
+                                <span class="label">Towns</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number" data-target="500">295,000+</span>
+                                <span class="label">Acres of Land</span>
+                            </div>
+                            <div class="stat">
+                                <span class="number" data-target="350">0</span>
+                                <span class="label">Organizations</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RIGHT SIDE (Image Card) -->
+                    <div class="mission-image">
+                        <img src="image-3.png" alt="Community image">
+                    </div>
+
+                </div>
+            </section>
 
 
+
+
+        </div>
         <!--dropdown
        <div class="header" style="margin-top: 100px;">
            <h1>Morris County Resource Hub</h1>
@@ -90,45 +143,7 @@
        </div>
 </div>
 -->
-        <section class="mission-section">
-            <div class="mission-content">
-
-                <!-- LEFT SIDE (Text) -->
-                <div class="mission-text">
-                    <h2>Our Mission</h2>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula metus at nisi
-                        fermentum,
-                        vitae scelerisque lectus imperdiet. Cras nec quam ac odio aliquam blandit. Maecenas sit amet
-                        semper lorem.
-                        Sed dignissim, leo nec ultrices volutpat, lorem justo imperdiet eros, at malesuada est felis ut
-                        libero.
-                        Fusce in sagittis tortor, sed vehicula enim. Vivamus sit amet velit id nulla ultricies dictum.
-                    <div class="mcblurb-stats">
-                        <div class="stat">
-                            <span class="number" data-target="50">33+</span>
-                            <span class="label">Towns</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number" data-target="500">295,000+</span>
-                            <span class="label">Acres of Land</span>
-                        </div>
-                        <div class="stat">
-                            <span class="number" data-target="350">0</span>
-                            <span class="label">Organizations</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- RIGHT SIDE (Image Card) -->
-                <div class="mission-image">
-                    <img src="community.jpg" alt="Community image">
-                </div>
-
-            </div>
-        </section>
-
-        <div class="search-container">
+        <div class="search-container" id="search">
             <h2>Search Events</h2>
             <form class="searchbox" action="#" method="GET">
                 <div class="form-row">
@@ -136,15 +151,15 @@
                     <div class="form-left">
                         <div>
                             <label>Town:</label>
-                            <input type="text" name="town" placeholder="Enter town">
+                            <input type="text" id="inputTown" placeholder="Enter town">
                         </div>
                         <div>
                             <label>Keywords:</label>
-                            <input type="text" name="keywords" placeholder="Enter keywords">
+                            <input type="text" id="inputKeyword" placeholder="Enter keywords">
                         </div>
                         <div>
                             <label>Distance:</label>
-                            <select name="distance">
+                            <select id="selectDistance">
                                 <option value="">Select miles</option>
                                 <option value="5">5 miles</option>
                                 <option value="10">10 miles</option>
@@ -160,21 +175,25 @@
                         <div class="date-range">
                             <div>
                                 <label style="font-weight: normal;">From</label>
-                                <input type="date" name="from">
+                                <input type="date" id="from">
                             </div>
                             <div>
                                 <label style="font-weight: normal;">To</label>
-                                <input type="date" name="to">
+                                <input type="date" id="to">
                             </div>
                         </div>
                     </div>
                 </div>
-                <button type="submit">Search</button>
+                <button type ="button" id="submit">Search</button>
             </form>
         </div>
+        <div class ="allresults-section">
+            <div id="results"></div>
+        </div>
+        
 
         <!-- FEATURED -->
-        <section class="section alt-bg">
+        <section class="section alt-bg featured-section">
             <div class="container text-center">
                 <h4
                     style="text-align: center; font-weight: bold; font-size: 2rem; padding-bottom: 20px; text-decoration-color: darkblue;">
@@ -210,40 +229,6 @@
             </div>
         </section>
 
-        <!--
-<div id="aboutus">
-   <h2>About us</h2>
-   <div class="card">
-       <div class="container">
-          
-           <h4><b> Ekansh Simgekar </b></h4>
-           <p> Sophomore in the Academy of Computer Science with an avid interest in web design. Other interests are in
-               fields like robotics, cybersecurity, and the sciences. </p>
-       </div>
-       <div class="container">
-           <h4><b> Nysa Patel </b></h4>
-           <p>Sophomore in the Academy of Computer Science with a passion for computer science and AI. Hobbies are
-              robotics, and helping businesses be more efficient.</p>
-       </div>
-       <div class="container">
-           <h4><b> Nysa Vadaliya</b></h4>
-           <p> Sohpmore in the Academy of Computer Science. Other passions include running, coding, research, and teaching kids how to code at CodeNinjas. </p>
-       </div>
-       <div class="container">
-           <h4><b> Ryan Khieu </b></h4>
-           <p> Veer managt </p>
-       </div>
-       <div class="container">
-           <h4><b> Elizabeth Elden </b></h4>
-           <p> Sophomore in the Academy of Computer Science with an interest in science topics. Participates in Robotics, Girls Who Code and Girl Scouts. </p>
-       </div>
-       <div class="container">
-           <h4><b> Maha K</b></h4>
-           <p> EI love  </p>
-       </div>
-   </div>
-</div>
--->
         <div class="palfundraiser">
             <div class="palfundraisertext">
                 <h2>Grow it Green Winter Market</h2>
@@ -267,8 +252,10 @@
             </div>
             <div class="palfundraisertext">
                 <h2>Parsippany PAL Wrestling 2026 Tricky Tray & Pasta Night</h2>
-                <p>Join us for a fun-filled night of pasta, prizes, and punching up the excitement at Parsippany PAL Wrestling on Feb 28 from 5pm to 10pm EST!
-                    Join us for a night of prizes, pasta, and fun! Over 200 baskets, cash raffles, and a 50/50 to support the Parsippany PAL Wrestling program. Tickets are only 9 dollars </p>
+                <p>Join us for a fun-filled night of pasta, prizes, and punching up the excitement at Parsippany PAL
+                    Wrestling on Feb 28 from 5pm to 10pm EST!
+                    Join us for a night of prizes, pasta, and fun! Over 200 baskets, cash raffles, and a 50/50 to
+                    support the Parsippany PAL Wrestling program. Tickets are only 9 dollars! </p>
             </div>
         </div>
 
@@ -294,10 +281,79 @@
         <footer>
             <div class="footer">
                 <h1>Morris County Resource Hub</h1>
-                <p>By Nysa Vadaliya, Nysa Patel, Ekansh Simgekar, Elizabeth Elden, Mahalakshmi Kancharlapalli, and Ryan
+                <p>By Nysa Vadaliya, Nysa Patel, Elizabeth Elden, Mahalakshmi Kancharlapalli, and Ryan
                     Khieu</p>
             </div>
         </footer>
+
+        <script>
+
+            let eventsData = [];
+            console.log("Script running");
+            //get JSON
+            fetch("data.json")
+                .then(res => res.json())
+                .then(data => {
+                    eventsData = data;
+                    console.log("Loaded events: ", eventsData.length);
+                });
+            
+            document.getElementById("submit").addEventListener("click", () => {
+                const town= document.getElementById("inputTown").value.toLowerCase();
+                const keyword = document.getElementById("inputKeyword").value.toLowerCase();
+                const fromDateInput = document.getElementById("from").value;
+                const toDateInput = document.getElementById("to").value;
+
+                const filtered = eventsData.filter(event => {
+                    //dates
+                    const start = new Date(event.start_date || event.date);
+                    const end = new Date (event.end_date || event.date);
+                    const from = fromDateInput ? new Date(fromDateInput) : null;
+                    const to = toDateInput ? new Date(toDateInput) : null;
+                    
+                    let matchDate = true;
+                    if(from) matchDate = end >= from;
+                    if(to) matchDate = matchDate && start <= to;   
+
+                    //town
+                    const matchTown = town === "" ||
+                        (event.location && event.location.toLowerCase().includes(town));
+                    
+                    //keword
+                    const matchKeyword = keyword === "" ||
+                        (event.name && event.name.toLowerCase().includes(keyword)) ||
+                        (event.category && event.category.toLowerCase().includes(keyword));
+
+                    return matchDate && matchTown && matchKeyword;
+                })
+                //debug
+                console.log("Filtered events:", filtered);
+                displayResults(filtered);
+            });
+
+            function displayResults(events) {
+                const resdiv = document.getElementById("results");
+                resdiv.innerHTML = "";
+                if (events.length ===0) {
+                    resdiv.innerHTML = "<p>No events</p>";
+                    return;
+                }
+                events.forEach(event => {
+                    const div = document.createElement("div");
+                    div.classList.add("event-card");
+
+                    div.innerHTML = `
+                        <h3>${event.name}</h3>
+                        <p><strong>Date:</strong> ${event.date || event.start_date}${event.end_date ? " - " + event.end_date : ""}</p>
+                        <p><strong>Time:</strong> ${event.time || "TBA"}</p>
+                        <p><strong>Location:</strong> ${event.location}</p>
+                        <p><strong>Category:</strong> ${event.category}</p>
+                        <a href="${event.url}" target="_blank">View Event</a>
+                    `;
+                    resdiv.appendChild(div);
+                });
+            };
+        </script>
     </body>
 
 </html>
